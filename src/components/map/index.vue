@@ -1,5 +1,5 @@
 <template >
-  <div class="scroll-hide">
+  <div>
     <header>
       列表
       <div class="right" @click="showMap">地图</div>
@@ -133,7 +133,7 @@
       },
       hideMap(){
         document.getElementById("mapList").className = "map";
-        document.getElementById("mapPage").className = "page page-leave";
+        document.getElementById("mapPage").className = "page ";
         this.removeMarker()
       },
       removeMarker(){
