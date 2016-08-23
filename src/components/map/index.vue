@@ -138,6 +138,7 @@
       },
       removeMarker(){
         this.mapObj.remove(this.markers);
+        this.walking.clear()
       },
       setMarker(){
          let list = this.slist;
