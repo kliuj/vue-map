@@ -149,7 +149,7 @@
         // this.setDetail([item])
         let self = this;
         this.walking.clear()
-        this.walking.walking.search([self.coordinates.lng, self.coordinates.lat], [item.location.lng, item.location.lat]);
+        this.walking.search([self.coordinates.lng, self.coordinates.lat], [item.location.lng, item.location.lat]);
       },
       setDetail(list){
         for(let i = 0; i < list.length; i += 1){
