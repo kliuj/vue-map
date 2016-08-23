@@ -127,12 +127,12 @@
         this.searchKeyWord()
       },
       showMap(){
-        document.getElementById("mapList").className = "page-hide";
+        document.getElementById("mapList").className = "map page-hide";
         document.getElementById("mapPage").className = "page page-enter";
         this.setMarker()
       },
       hideMap(){
-        document.getElementById("mapList").className = "";
+        document.getElementById("mapList").className = "map";
         document.getElementById("mapPage").className = "page page-leave";
         this.removeMarker()
       },
