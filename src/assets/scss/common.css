@@ -5,7 +5,6 @@
 	box-sizing: border-box;
 }
 html,body{
-	height: 100%;
 }
 input{
 	outline: none
@@ -52,6 +51,30 @@ header .right{
 header .right:active {
     background-color: #077cad;
 }
+header .left{
+		left: 0;
+    padding: 0 15px;
+    position: absolute;
+    top: 0;
+    z-index: 11;
+
+}
+header .left::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+header .left:active {
+    background-color: #077cad;
+}
 
 .searchBox{
 	position: fixed;
@@ -64,9 +87,16 @@ header .right:active {
 .map{
 	width: 100%;
 	top:118px;
-	margin-bottom: 44px;
 	position: absolute;;
 	min-height: 100%;
+	box-sizing: border-box;
+	padding:2px  5px;
+}
+#mapDiv{
+	width: 100%;
+	top:44px;
+	position: absolute;;
+	height: 100%;
 	box-sizing: border-box;
 	padding:2px  5px;
 }
@@ -139,4 +169,178 @@ header .right:active {
 }
 .text{
 		text-overflow: ellipsis;
+}
+.gv_loading {
+         width: 105px;
+         height: 24px;
+         line-height: 24px;
+         margin: 147px auto ;
+}
+
+.ball-clip-rotate > span {
+         background-color: #fff;
+         border-radius: 100%;
+         margin: 2px;
+         -webkit-animation-fill-mode: both;
+         animation-fill-mode: both;
+         border: 2px solid #ccc;
+         border-bottom-color: transparent;
+         height: 16px;
+         width: 16px;
+         background: transparent !important;
+         display: inline-block;
+         -webkit-animation: rotate-loading 0.75s 0s linear infinite;
+         animation: rotate-loading 0.75s 0s linear infinite;
+}
+
+.gv_loading .loading_text {
+         vertical-align: top;
+         margin-top: 0;
+         display: block;
+         float: left;
+         font-size: 14px;
+}
+
+.gv_loading .ball-clip-rotate {
+         float: left;
+         margin-right: 3px;
+}
+@keyframes rotate-loading {
+    0% {
+        opacity: 1;
+        -webkit-transform: rotate(0deg)
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: rotate(360deg)
+    }
+}
+.red{
+	color:#f10027
+}
+.noresult{
+	text-align: center;
+	padding: 180px 0
+}
+
+.page{
+		z-index: 2000;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		background-color: #f3f3f3;
+		overflow: hidden;
+		will-change: transform;
+		-webkit-transform: translate3d(-100%,0,0);
+		transform: translate3d(-100%,0,0);
+		-webkit-transition: 400ms;
+		-o-transition: 400ms;
+		transition: 400ms
+}
+.page-hide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+}
+.page-enter {
+		z-index: 2002;
+		-webkit-animation: pageFromRightToCenter 400ms forwards;
+		-o-animation: pageFromRightToCenter 400ms forwards;
+		animation: pageFromRightToCenter 400ms forward
+}
+.page-leave {
+		z-index: 2002;
+		-webkit-animation: pageFromCenterToRight 400ms forwards;
+		-o-animation: pageFromCenterToRight 400ms forwards;
+		animation: pageFromCenterToRight 400ms forwards
+}
+.scroll-hide{
+	height: 100%;
+  overflow: hidden;
+}
+@-webkit-keyframes pageFromRightToCenter {
+		from {
+				opacity: .9;
+				-webkit-transform: translate3d(100%,0,0);
+				transform: translate3d(100%,0,0)
+		}
+
+		to {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0)
+		}
+}
+
+@-o-keyframes pageFromRightToCenter {
+		from {
+				opacity: .9;
+				transform: translate3d(100%,0,0)
+		}
+
+		to {
+				opacity: 1;
+				transform: translate3d(0,0,0)
+		}
+}
+
+@keyframes pageFromRightToCenter {
+		from {
+				opacity: .9;
+				-webkit-transform: translate3d(100%,0,0);
+				transform: translate3d(100%,0,0)
+		}
+
+		to {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0)
+		}
+}
+
+@-webkit-keyframes pageFromCenterToRight {
+		from {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0)
+		}
+
+		to {
+				opacity: .9;
+				-webkit-transform: translate3d(100%,0,0);
+				transform: translate3d(100%,0,0)
+		}
+}
+
+@-o-keyframes pageFromCenterToRight {
+		from {
+				opacity: 1;
+				transform: translate3d(0,0,0)
+		}
+
+		to {
+				opacity: .9;
+				transform: translate3d(100%,0,0)
+		}
+}
+
+@keyframes pageFromCenterToRight {
+		from {
+				opacity: 1;
+				-webkit-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0)
+		}
+
+		to {
+				opacity: .9;
+				-webkit-transform: translate3d(100%,0,0);
+				transform: translate3d(100%,0,0)
+		}
 }

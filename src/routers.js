@@ -15,6 +15,9 @@ export default function(router){
 					}
 				}
 		})
+		router.map({
+
+		})
 		router.redirect({//定义全局的重定向规则。全局的重定向会在匹配当前路径之前执行。
 		    '*':"/index"//重定向任意未匹配路径到/index
 		});
@@ -26,6 +29,6 @@ export default function(router){
 		})
 		//注册路由切换后
 		router.afterEach(function (transition) {
-				
+
 		})
 }
